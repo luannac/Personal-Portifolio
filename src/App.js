@@ -17,9 +17,42 @@ function App() {
         >
           Learn React
         </a>
+        <br></br>
+        <TestButton></TestButton>
       </header>
     </div>
   );
+}
+
+function TestButton(){
+  var user = {
+    nome :"luann",
+    isLogged: false
+  }
+  let content;
+
+  function onClickBtn(){alert('OI');}
+
+  if(user.isLogged){
+    content = (<h1>
+      {user.nome}
+      </h1>)
+    }
+
+
+
+  return (
+    <>
+    {content}
+
+    {user.isLogged ? (<h1>
+      {user.nome}
+      </h1>) : (<h1>Nao esta Logado</h1>)
+    }
+  
+    <button onClick={onClickBtn}>Test Button</button>
+    </>
+  )
 }
 
 export default App;
